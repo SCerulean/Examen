@@ -18,48 +18,65 @@
 
     <!-- Container general -->
 
-  <div class="container-fluid bg-success w-100 p-0 h-100 text-center">
+    <div class="container-fluid bg-success w-100 p-0 h-100 text-center">
 
     <!-- Navbar -->
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-            <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 
-              <a class="navbar-brand" href="#"> PETSHOP </a>
+        <div class="container-fluid"> <!-- CONTAINER NAVBAR -->
 
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+          <a class="navbar-brand" href="#"> PETSHOP </a>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- ICONO BOTÓN -->
 
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"> Inicio </a>
-                  </li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> <!-- FIN ICONO BOTÓN -->
 
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Categorias
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#"> Arnés </a></li>
-                      <li><a class="dropdown-item" href="#"> Trajes</a></li>
-                      <li><a class="dropdown-item" href="#"> Identificadores </a></li>
-                    </ul>
+          <!-- DIV BOTÓNES -->
 
-                  </li>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              <!-- BOTÓN INICIO -->
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"> Inicio </a>
+              </li> <!-- FIN BOTÓN INICIO -->
+
+              <!-- DROPDOWN -->
+
+              <li class="nav-item dropdown">
+
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Categorías </a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"> Arnés </a></li>
+                  <li><a class="dropdown-item" href="#"> Trajes</a></li>
+                  <li><a class="dropdown-item" href="#"> Identificadores </a></li>
                 </ul>
 
-        
-                <div class="d-flex">     
-                  <button>
-                    <a class="nav-link active" aria-current="page" href="{% url 'inicio_sesion'%}"> Iniciar sesion </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-        </nav>
+              </li> <!-- FIN DROPDOWN -->
+
+            </ul>
+
+            <!-- BOTÓN INICIAR SESION -->
+
+            <div class="d-flex">    
+
+              <button>
+                <h6><a class="nav-link active text-black bg-white" aria-current="page" href="{% url 'inicio_sesion'%}"> Iniciar sesion </a></h6>
+              </button>
+
+            </div> <!-- FIN INICIAR SESION -->
+
+          </div> <!-- FIN DIV BOTONES -->
+
+        </div> <!-- FIN CONTAINER NAVBAR -->
+
+      </nav> <!-- FIN NAVBAR -->
 
     <!-- CATÁLOGO -->
 
@@ -241,6 +258,7 @@
 
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
   </div>
+
   <!-- Copyright -->
 
 </footer> <!-- Final Footer -->
