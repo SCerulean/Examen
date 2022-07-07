@@ -1,7 +1,6 @@
 from ast import Return
 from urllib import request
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect
 from core.forms import ProductoForms
 from .models import Productos
 
@@ -28,7 +27,7 @@ def form_Producto(request):
     }
 
     if request.method == 'POST':
-        formulario = ProductoForms(request.POST)
+        formulario = ProductoForms(data=request.POST, instance=Productos)
         if formulario.is_valid:
             formulario.save()
 
@@ -48,6 +47,13 @@ def form_mod_producto(request,id):
 
 #################################################################################
 
+def form_del_producto(request, id):
+    Productos = Productos.objects.get(IDProducto=id)
+    Productos.delete()
+    return redirect(to="ListadoProductos")
+
+#################################################################################
+
 #Traer datos
 def TraerDatos(request):
     Producto = Productos.objects.all()
@@ -58,3 +64,4 @@ def TraerDatos(request):
 
     return render(request, 'inicio_Catalogo.html',datos)
 
+#################################################################################

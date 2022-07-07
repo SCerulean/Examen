@@ -34,14 +34,15 @@
                     <td>{{ve.NombreProducto}}</td>
                     <td>{{ve.MarcaProducto}}</td>
                     <td>{{ve.Precio}}</td>
-                    <td><a href="{% url 'form_mod_producto' ve.IDProducto %}"></a></td>
+                    <td><a href="{% url 'form_mod_producto' ve.IDProducto %}">Modificar</a></td>
+                    <td><a href="{% url 'form_mod_producto' ve.IDProducto %}">Eliminar</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <a href="{% 'form_producto' %}">Nuevo Producto</a>
+        <br><br>
     </div>
-
-
 
 </body>
 </html>
