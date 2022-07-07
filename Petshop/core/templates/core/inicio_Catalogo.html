@@ -146,6 +146,23 @@
 
     </div> <!-- FIN CONTAINER SECCION DE PRODUCTOS -->
 
+
+    <!-- Probando -->
+
+    <div class="container">
+      <div class="row">
+
+        <table>
+          <tr><td>IDProducto</td><td>NombreProducto</td><td>MarcaProducto</td><td>Precio</td></tr>
+          { % for ve in producto % }
+          <tr><td>{{ve.IDProducto}}</td><td>{{ve.NombreProducto}}</td><td>{{ve.MarcaProducto}}</td><td>{{ve.Precio}}</td></tr>
+          { % endfor % }
+        </table>
+
+      </div>
+    </div>
+
+
   </div> <!-- FIN CONTAINER GENERAL -->
 
 

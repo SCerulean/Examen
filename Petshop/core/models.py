@@ -15,10 +15,10 @@ class Categorías (models.Model):
 #modelo Productos
 
 class Productos (models.Model):
-    IDProducto = models.IntegerField(max_length=8, primary_key=True, verbose_name= ' ID PRODUCTO ')
+    IDProducto = models.IntegerField(primary_key=True, verbose_name= ' ID PRODUCTO ')
     NombreProducto = models.CharField(max_length=20, verbose_name=' NOMBRE PRODUCTO ')
     MarcaProducto = models.CharField(max_length=20, verbose_name=' MARCA ')
-    PrecioProducto = models.IntegerField(max_length=8, verbose_name=' PRECIO ')
+    PrecioProducto = models.IntegerField(verbose_name=' PRECIO ')
 
     def __str__(self):
         return self.NombreProducto

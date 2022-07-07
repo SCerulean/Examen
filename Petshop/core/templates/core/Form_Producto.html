@@ -16,10 +16,15 @@
 
 <body>
 
+<div class="container">
+
+    <h2> Crear Registro </h2>
+
+    <br>
+
     <div class="row">
         <form method="post" action="" id="formulario">
 
-            {% csfr_token %}
             <div class="form-group">
             {{ form.as_table }}    
             </div>
@@ -29,7 +34,11 @@
             <div id="error" class="alert alert-danger" role="alert"></div>
 
         </form>
+        <div class="alert alert-success" role="alert">
+            {{mensaje}}
+        </div>
     </div>
+</div>
 
 </body>
 </html>

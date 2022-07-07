@@ -1,35 +1,45 @@
+from ast import Return
+from urllib import request
 from django.shortcuts import render
+
+from core.forms import ProductoForms
 from .models import Productos
 
 # Create your views here.
+
 def home (request):
-    return render(request,' core/inicio_Catalogo.html ')
+    return render(request,'core/inicio_Catalogo.html')
 
 def create_acount(request):
-    return render(request,' core/create_acount_form.html ')
+    return render(request,'core/create_acount_form.html')
 
 def inicio_sesion(request):
-    return render(request,' core/inicio_sesion.html ')
+    return render(request,'core/inicio_sesion.html')
 
 def form_Producto(request):
-    return render(request, ' core/form_Producto.html ')
+    return render(request, 'core/Form_Producto.html')
 
-########################################################################
+# Post
+def form_Producto(request): 
+    datos = {
+        'form': ProductoForms()
+    }
 
-#Traer Productos de la tabla
+    if request.method == 'POST':
+        formulario = ProductoForms(request.POST)
+        if formulario.is_valid:
+            formulario.save()
 
-def Producto(request):
+            datos['mensaje'] = "Guardados Correctamente"
+
+    return render (request, 'core/Form_Producto.html',datos)
+
+def TraerDatos(request):
     Producto = Productos.objects.all()
 
-#Pasar los datos de los productos la template
+    datos = {
+        'Productos' : Producto
+    }
 
-datos = {
-    ' Productos ' : Producto
-}
-
-# Se envia al template 
-
-#return render(request, ' core/inicio_Catalogo.html ',datos)
-
-#########################################################################
+    return render(request, 'inicio_Catalogo.html',datos)
 
