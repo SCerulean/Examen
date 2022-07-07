@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import home, inicio_sesion
+from .views import home, inicio_sesion , form_Producto
 #--from rest_framework import routers
 
 
 
 urlpatterns = [
-    path('', home, name="home"),
-    path("inicio-sesion",inicio_sesion,name="inicio_sesion")
+    path('  ', home, name="home"),
+    path(' inicio-sesion ', inicio_sesion,name="inicio_sesion"),
+    path(' form-Producto ', form_Producto, name="form_Producto"),
 ]

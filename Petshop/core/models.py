@@ -5,7 +5,7 @@ from django.db import models
 
 #modelo Categorías
 
-class Categorías (models.Models):
+class Categorías (models.Model):
     idCategoría = models.IntegerField(primary_key=True, verbose_name=' ID DE LA CATEGORIA ')
     NombreCategoría = models.CharField(max_length=50, verbose_name=' NOMBRE DE LA CATEGORIA ')
 
