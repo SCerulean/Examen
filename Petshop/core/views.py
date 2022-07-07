@@ -19,6 +19,8 @@ def inicio_sesion(request):
 def form_Producto(request):
     return render(request, 'core/Form_Producto.html')
 
+#################################################################################
+
 # Post
 def form_Producto(request): 
     datos = {
@@ -34,6 +36,19 @@ def form_Producto(request):
 
     return render (request, 'core/Form_Producto.html',datos)
 
+#################################################################################
+
+#modificar
+def form_mod_producto(request,id):
+    producto = Productos.objects.get(IDProducto=id)
+    datos = {
+        'form': ProductoForms(instance=Productos)
+    }
+    return render(request,'core/Form_Mod_Producto.html',datos)
+
+#################################################################################
+
+#Traer datos
 def TraerDatos(request):
     Producto = Productos.objects.all()
 
