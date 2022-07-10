@@ -15,6 +15,9 @@ def create_acount(request):
 def inicio_sesion(request):
     return render(request,'core/inicio_sesion.html')
 
+def Registrar_cuenta(request):
+    return render(request,'core/Registrarce.html')
+
 def form_Producto(request):
     return render(request, 'core/Form_Producto.html')
 
