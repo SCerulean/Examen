@@ -41,6 +41,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('nombre', models.CharField(max_length=20, primary_key=True, serialize=False, verbose_name='nombre')),
                 ('contraseña', models.CharField(max_length=50, verbose_name='contrasena')),
+                ('correo', models.CharField(max_length=100, verbose_name='correo')),
                 ('sub_usu', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.subcripcion')),
             ],
         ),
