@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'core/css/catacss.css'%}">
+    
+    <title> PETSHOP - CARRITO </title>
+
+  </head>
+
+<body>
+
+    <!-- Container general -->
+
+    <div class="container-fluid bg-success w-100 p-0 h-100 text-center">
+
+    <!-- Navbar -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    
+    <div class="container-fluid"> <!-- CONTAINER NAVBAR -->
+    
+        <a class="navbar-brand" href="#"> PETSHOP </a>
+    
+    <!-- ICONO BOTÓN -->
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> <!-- FIN ICONO BOTÓN -->
+    
+    <!-- DIV BOTÓNES -->
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+        <!-- BOTÓN INICIO -->
+    
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"> Inicio </a>
+            </li> <!-- FIN BOTÓN INICIO -->
+    
+        <!-- DROPDOWN -->
+    
+            <li class="nav-item dropdown">
+    
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Categorías </a>
+    
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#"> Arnés </a></li>
+                <li><a class="dropdown-item" href="#"> Trajes</a></li>
+                <li><a class="dropdown-item" href="#"> Identificadores </a></li>
+            </ul>
+    
+            </li> <!-- FIN DROPDOWN -->
+    
+            </ul>
+    
+        <!-- BOTÓN INICIAR SESION -->
+    
+            <div class="d-flex">    
+    
+            <button>
+                <h6><a class="nav-link active text-black bg-white" aria-current="page" href="{% url 'inicio_sesion'%}"> Iniciar sesion </a></h6>
+            </button>
+    
+        </div> <!-- FIN INICIAR SESION -->
+    
+        </div> <!-- FIN DIV BOTONES -->
+    
+    </div> <!-- FIN CONTAINER NAVBAR -->
+    
+    </nav> <!-- FIN NAVBAR -->   
+
+    <!-- CONTAINER LISTA CARRITO Y TITULO -->
+
+    <div class="container-fluid">
+
+    <hr>
+
+    <div class="container">
+        <h3> CARRITO CLIENTE </h3>
+    </div>
+
+    <hr>
+
+    <br>
+
+    <!-- CARRITO** -->
+
+    <div class="row">
+
+    <table class="table bg-dark text-white">
+
+        <thead>
+            <tr>
+            <th scope="col"> ID Producto </th>
+            <th scope="col"> Nombre Producto </th>
+            <th scope="col"> Marca Producto </th>
+            <th scope="col"> Precio </th>
+            <th scope="col"> X </th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for ve in vehiculos %}
+        <tr>
+            <td>{{ve.IDProducto}}</td>
+            <td>{{ve.NombreProducto}}</td>
+            <td>{{ve.MarcaProducto}}</td>
+            <td>{{ve.Precio}}</td>
+            <td><a href=""> X </a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+        <div class="container">
+        <button type="button" class="btn btn-dark"><a href=""> Seguir Comprando </a></button>
+        </div>
+
+        <br><br>
+
+    </div>
+    </div> <!-- FIN CONTAINER LISTA CARRITO Y TITULO -->
+
+
+    <!-- INICIO FOOTER -->
+    
+    <footer class="bg-dark text-center text-white"> 
+
+    <!-- CONTAINER GRID -->
+    
+        <div class="container p-4"> 
+    
+    <!-- SECCION NUESTROS CONTACTOS -->
+    
+        <section class="mb-4">  
+          <h3> Nuestros Contactos </h3>
+        </section>
+    
+    <!-- SECCION DE COLUMNAS -->
+    
+        <section class="">
+    
+        <!-- ROW COLUMNAS -->
+    
+          <div class="row"> 
+    
+        <!-- COLUMNA: CONTACTOS TELEFÓNICOS -->
+    
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0"> 
+    
+            <h5 class="text-uppercase"> CONTACTO TELEFÓNICO </h5>
+    
+            <ul class="list-unstyled mb-0">
+    
+            <li>
+                <h6> +569 555 555 55 </h6>
+            </li>
+            <li>
+                <h6> +569 999 999 99 </h6>
+            </li>
+    
+            </ul>
+    
+            </div>  <!-- FIN COLUMNA: CONTACTOS TELEFÓNICOS -->
+    
+            <!-- COLUMNA: CONTACTO REDES SOCIALES -->
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">  
+    
+              <h5 class="text-uppercase"> NUESTRAS REDES </h5>
+    
+              <ul class="list-unstyled mb-0">
+    
+                <li>
+                  <a href="#!" class="text-white"> INSTAGRAM : @PETSHOP-VALPARAISO </a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white"> FACEBOOK : @PETSHOP-VALPARAISO </a>
+                </li>
+      
+              </ul>
+    
+            </div>  <!-- FIN COLUMNA: CONTACTO REDES SOCIALES -->
+    
+            <!-- SPONSORS OFICIALES -->
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">  
+              <h5 class="text-uppercase"> PROVEEDORES </h5>
+    
+              <ul class="list-unstyled mb-0">
+    
+                <li>
+                  <h6> IDENTIFICADORES - ANIMALES SEGUROS </h6>
+                </li>
+                <li>
+                  <h6> TRAJES Y ARNESES - PETLOVERS </h6>
+                </li>
+        
+              </ul>
+            </div> <!-- FIN SPONSORS OFICIALES -->
+    
+            <!-- COLUMNA 4 -->
+    
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">  
+              <h5 class="text-uppercase"> Links </h5>
+    
+              <ul class="list-unstyled mb-0">
+    
+                <li>
+                  <a href="#!" class="text-white">  Link 1  </a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white">  Link 2  </a>
+                </li>
+       
+              </ul>
+    
+            </div>  <!-- FIN COLUMNA 4 -->
+    
+          </div>  <!-- FIN ROW COLUMNAS -->
+    
+        </section>  <!-- FIN SECCION DE COLUMNAS -->
+    
+      </div>  <!-- FIN CONTAINER GRID -->
+    
+      <!-- Copyright -->
+    
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      </div>
+    
+      <!-- Copyright -->
+    
+    </footer> <!-- Final Footer -->
+    
+    </div> <!-- Fin container general -->
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+       
+    
+    </body>
+</html>
