@@ -1,7 +1,9 @@
 from ast import Return
 from urllib import request
 from django.shortcuts import render,redirect
-from .forms import registro
+
+from .models import Producto
+from .forms import registro,ProductoForm
 
 
 
@@ -11,11 +13,24 @@ from .forms import registro
 def home (request):
     return render(request,'core/inicio_Catalogo.html')
 
-def create_acount(request):
-    return render(request,'core/create_acount_form.html')
+
+
+
+def delete_Producto(request, id):
+    producto = Producto.objects.get(SKU=id)
+    producto.delete()
+    return redirect(to="lista_productos")
+
+def ListadoProductos (request):
+
+    producto  = Producto.objects.all()
+    datos = {'producto': producto}
+    return render(request,'core/ListadoProductos.html',datos)
+
+
+
 
 def inicio_sesion(request):
-
     
     return render(request,'core/inicio_sesion.html')
 
@@ -29,48 +44,40 @@ def Registrar_cuenta(request):
 
     return render(request,'core/Registrarce.html',datos)
 
-def form_Producto(request):
-    return render(request, 'core/Form_Producto.html')
 
 #################################################################################
 
 # Post
-def form_Producto(request): 
-    datos = {
-        'form': ProductoForms()
-    }
-
+def agregar_Producto(request): 
+    datos = {'form': ProductoForm()}
     if request.method == 'POST':
-        formulario = ProductoForms(data=request.POST, instance=Productos)
+        formulario = ProductoForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-
-            datos['mensaje'] = "Guardados Correctamente"
-
-    return render (request, 'core/Form_Producto.html',datos)
+            datos['mensaje'] = "Datos guardados correctamente"
+            
+    return render(request, 'core/form_Producto.html', datos)
 
 #################################################################################
 
 #modificar
-def form_mod_producto(request,id):
-    producto = Productos.objects.get(IDProducto=id)
+def modificar_producto(request,id):
+    producto = Producto.objects.get(SKU=id)
     datos = {
-        'form': ProductoForms(instance=Productos)
+        'form': ProductoForm(instance=producto)
     }
-    return render(request,'core/Form_Mod_Producto.html',datos)
-
-#################################################################################
-
-def form_del_producto(request, id):
-    Productos = Productos.objects.get(IDProducto=id)
-    Productos.delete()
-    return redirect(to="ListadoProductos")
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Modificados correctamente"
+    return render(request, 'core/Form_Mod_Producto.html', datos)
 
 #################################################################################
 
 #Traer datos
 def TraerDatos(request):
-    Producto = Productos.objects.all()
+    Producto = Producto.objects.all()
 
     datos = {
         'Productos' : Producto

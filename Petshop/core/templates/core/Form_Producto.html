@@ -15,30 +15,20 @@
   </head>
 
 <body>
-
-<div class="container">
-
-    <h2> Crear Registro </h2>
-
-    <br>
-
-    <div class="row">
-        <form method="post" action="" id="formulario">
-
-            <div class="form-group">
-            {{ form.as_table }}    
-            </div>
-
-            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-            <div id="error" class="alert alert-danger" role="alert"></div>
-
-        </form>
-        <div class="alert alert-success" role="alert">
-            {{mensaje}}
-        </div>
+    <div class="container">
+      <h1>Agregar productos</h1>
+      <form action="" method="post" id="formulario">
+          {% csrf_token %}
+        <table class="form-group">
+          {{ form.as_table }}
+        </table>
+        <input type="submit" value="Enviar" class="btn btn-danger" id="enviar">
+        <input type="reset" value="Limpiar" class="btn btn-primary" id="limpiar">
+        <div id="error" class="alert alert-danger" role="alert"></div>
+      </form>
+      <div class="alert alert-success" role="alert">{{mensaje}}</div>
     </div>
-</div>
+
 
 </body>
 </html>
