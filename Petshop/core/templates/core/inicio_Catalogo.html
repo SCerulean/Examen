@@ -73,45 +73,21 @@
     <h1> CATÁLOGO </h1>
 
     <hr>
-    <div class="row">
-      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+
+    <div class="row" id="items"></div>
+
+    <template id="template-card">
+      <div class="col-4 mb-2 col-md-4">
         <div class="card">
-          <img class="card-img-top" src="https://i.pinimg.com/564x/41/ef/5e/41ef5e28832e5e65ecc6e3203c8008ee.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5> Titulo </h5>
+            <p> precio </p>
+            <button class="btn btn-black"> Ver Producto </button>
           </div>
         </div>
       </div>
+    </template>
 
-      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="card">
-          <img class="card-img-top" src="https://i.pinimg.com/564x/41/ef/5e/41ef5e28832e5e65ecc6e3203c8008ee.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12  col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <div class="card">
-          <img class="card-img-top" src="https://i.pinimg.com/564x/41/ef/5e/41ef5e28832e5e65ecc6e3203c8008ee.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div> 
-</div>
-          
-
-
-
-      </div>
 
     <!-- INICIO FOOTER -->
     
@@ -137,7 +113,7 @@
 
         <!-- COLUMNA: CONTACTOS TELEFÓNICOS -->
 
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0"> 
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0"> 
 
           <h5 class="text-uppercase"> CONTACTO TELEFÓNICO </h5>
 
@@ -156,7 +132,7 @@
 
         <!-- COLUMNA: CONTACTO REDES SOCIALES -->
 
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">  
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">  
 
           <h5 class="text-uppercase"> NUESTRAS REDES </h5>
 
@@ -175,7 +151,7 @@
 
         <!-- SPONSORS OFICIALES -->
 
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">  
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">  
           <h5 class="text-uppercase"> PROVEEDORES </h5>
 
           <ul class="list-unstyled mb-0">
@@ -188,25 +164,8 @@
             </li>
     
           </ul>
+
         </div> <!-- FIN SPONSORS OFICIALES -->
-
-        <!-- COLUMNA 4 -->
-
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">  
-          <h5 class="text-uppercase"> Links </h5>
-
-          <ul class="list-unstyled mb-0">
-
-            <li>
-              <a href="#!" class="text-white">  Link 1  </a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">  Link 2  </a>
-            </li>
-   
-          </ul>
-
-        </div>  <!-- FIN COLUMNA 4 -->
 
       </div>  <!-- FIN ROW COLUMNAS -->
 
@@ -232,7 +191,8 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    {% load static %}
+    <script src="static\core\JS\Carrito.js"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
