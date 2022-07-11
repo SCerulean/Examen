@@ -18,7 +18,7 @@
 
     <!-- Container general -->
 
-    <div class="container-fluid bg-success w-100 p-0 h-100 text-center">
+    <div class="container-fluid w-100 p-0 h-100 text-center">
 
     <!-- Navbar -->
 
@@ -46,19 +46,6 @@
                 <a class="nav-link active" aria-current="page" href="#"> Inicio </a>
               </li> <!-- FIN BOTÓN INICIO -->
 
-              <!-- DROPDOWN -->
-
-              <li class="nav-item dropdown">
-
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Categorías </a>
-
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#"> Arnés </a></li>
-                  <li><a class="dropdown-item" href="#"> Trajes</a></li>
-                  <li><a class="dropdown-item" href="#"> Identificadores </a></li>
-                </ul>
-
-              </li> <!-- FIN DROPDOWN -->
 
             </ul>
 
@@ -78,93 +65,53 @@
 
       </nav> <!-- FIN NAVBAR -->
 
-    <!-- CATÁLOGO -->
 
-      <hr>
+  <div class="container-fluid" id="cards">
 
-      <h1> CATÁLOGO </h1>
+    <hr>
 
-      <hr>
+    <h1> CATÁLOGO </h1>
 
-    <!-- CONTAINER SECCION DE PRODUCTOS -->
+    <hr>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="card">
+          <img class="card-img-top" src="https://i.pinimg.com/564x/41/ef/5e/41ef5e28832e5e65ecc6e3203c8008ee.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
 
-    <div class="container">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="card">
+          <img class="card-img-top" src="https://i.pinimg.com/564x/41/ef/5e/41ef5e28832e5e65ecc6e3203c8008ee.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
 
-      <!-- ROW PARA LAS COLUMNAS DE PRODUCTOS -->
-
-      <div class="row">  
-
-        <!-- PRODUCTO 1 -->
-
-        <div class="col-3">
-
-          <ul>
-
-            <li></li>
-
-          </ul>
-
-        </div>  <!-- FIN PRODUCTO 1 -->
-
-        <!-- PRODUCTO 2 -->
-
-        <div class="col-3">
-
-          <ul>
-
-            <li></li>
-
-          </ul>
-
-        </div>  <!-- FIN PRODUCTO 2 -->
-
-        <!-- PRODUCTO 3 -->
-
-        <div class="col-3">
-
-          <ul>
-
-            <li></li>
-
-          </ul>
-
-        </div>  <!-- FIN PRODUCTO 3 -->
-
-        <!-- PRODUCTO 4 -->
-
-        <div class="col-3">
-
-          <ul>
-
-            <li></li>
-
-          </ul>
-
-        </div>  <!-- FIN PRODUCTO 4 -->
-
-      </div> <!-- FIN ROW PARA LAS COLUMNAS DE PRODUCTOS -->
-
-    </div> <!-- FIN CONTAINER SECCION DE PRODUCTOS -->
+      <div class="col-12  col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="card">
+          <img class="card-img-top" src="https://i.pinimg.com/564x/41/ef/5e/41ef5e28832e5e65ecc6e3203c8008ee.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div> 
+</div>
+          
 
 
-    <!-- Probando -->
-
-    <div class="container">
-      <div class="row">
-
-        <table>
-          <tr><td>IDProducto</td><td>NombreProducto</td><td>MarcaProducto</td><td>Precio</td></tr>
-          { % for ve in producto % }
-          <tr><td>{{ve.IDProducto}}</td><td>{{ve.NombreProducto}}</td><td>{{ve.MarcaProducto}}</td><td>{{ve.Precio}}</td></tr>
-          { % endfor % }
-        </table>
 
       </div>
-    </div>
-
-
-  </div> <!-- FIN CONTAINER GENERAL -->
-
 
     <!-- INICIO FOOTER -->
     

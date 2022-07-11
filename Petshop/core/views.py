@@ -1,6 +1,8 @@
 from ast import Return
 from urllib import request
 from django.shortcuts import render,redirect
+from .forms import registro
+
 
 
 
@@ -13,10 +15,19 @@ def create_acount(request):
     return render(request,'core/create_acount_form.html')
 
 def inicio_sesion(request):
+
+    
     return render(request,'core/inicio_sesion.html')
 
 def Registrar_cuenta(request):
-    return render(request,'core/Registrarce.html')
+    datos = {'form': registro()}
+    if request.method == 'POST':
+        formulario = registro(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Datos guardados correctamente"
+
+    return render(request,'core/Registrarce.html',datos)
 
 def form_Producto(request):
     return render(request, 'core/Form_Producto.html')

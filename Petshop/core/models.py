@@ -38,7 +38,7 @@ class Cuenta_cliente(models.Model):
     nombre = models.CharField(max_length=20 ,primary_key=True ,verbose_name='nombre') 
     correo = models.CharField(max_length=100,verbose_name='correo')
     contraseña = models.CharField(max_length=50,verbose_name='contrasena')
-    sub_usu = models.ForeignKey(Subcripcion,on_delete=models.CASCADE)
+    sub_usu = models.ForeignKey(Subcripcion,null=True,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.nombre  
