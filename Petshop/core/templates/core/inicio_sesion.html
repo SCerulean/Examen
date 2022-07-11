@@ -41,25 +41,31 @@
     </nav>
 
 
-<div class="container-fluid" id="formu">
+    <div class="container-fluid" id="formu">
 
-  <form method="post" action="#"  id="formulario">
-    <div class="container-fluid field">
-      <div class="form-group">
-        <label for="text">Nombre</label>
-        <input type="text" class="form-control" id="Nombre">
-        <div id="error" class="alert alert-danger" role="alert" ></div>
-      </div>
-
-      <div class="form-group">
-        <label for="text">Contraseña</label>
-        <input type="password" class="form-control" id="contraseña">
-        <div id="error4" class="alert alert-danger" role="alert" ></div>
-      </div>
-
-      <button type="submit" class="btn btn-primary" id="iniciar sesion" value="Enviar">Iniciar sesion </button>
-    </div> 
-    </form>
+      <form method="post" action="#"  id="formulario">
+        <div class="container-fluid field">
+    
+    
+          <div class="container">
+            <h1>Inicio de sesion</h1>
+            <form action="" method="post" id="formulario">
+                {% csrf_token %}
+              <table id="formuRegistro">
+                {{ form.as_table }}
+              </table>
+                
+              
+              <input type="submit" value="Enviar" class="btn btn-primary" id="enviar">
+              <div id="error" class="alert alert-danger" role="alert"></div>
+            </form>
+            <div class="alert alert-success" role="alert">{{mensaje}}</div>
+          </div>
+          
+    
+          
+        </div> 
+        </form>
     <label id="linkRegistro">  <a href="{% url 'Registrar_cuenta' %}"> ¿No tienes cuenta? Registrate!</a></label>
    
 </div>
