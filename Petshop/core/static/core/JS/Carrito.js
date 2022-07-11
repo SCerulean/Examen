@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchData()
 })
 
+items.addEventListener('click', e => {
+    MostrarProducto(e)
+})
+
 const fetchData = async () => {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -24,6 +28,7 @@ const Cartitas = data => {
 
         console.log(producto)
         templateCard.querySelector('h5').textContent = producto.title
+        templateCard.querySelector('.btn-dark').dataset.di = producto.id 
 
 
         const clone = templateCard.cloneNode (true)
@@ -32,4 +37,12 @@ const Cartitas = data => {
     })
 
     items.appendChild(fragment)
+}
+
+const MostrarProducto = e => {
+    //console.log(e.target)
+    //console.log(e.target.classList.contains('btn-dark'))
+    if(e.target.classList.contains('btn-dark')){
+        
+    }
 }

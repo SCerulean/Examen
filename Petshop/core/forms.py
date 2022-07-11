@@ -2,7 +2,7 @@ from dataclasses import fields
 from pyexpat import model
 from django import forms
 from django.forms import ModelForm, Widget
-from .models import Cuenta_cliente
+from .models import Cuenta_cliente,Producto
 
         
 class registro (ModelForm):
@@ -23,4 +23,11 @@ class login (ModelForm):
     class Meta :
         model = Cuenta_cliente
         fields= ['nombre','contraseña',]
+
+
+class ProductoForm (ModelForm):
+    class Meta :
+        model = Producto
+        fields= ['SKU','nombre','precio','stock','categoria',]
+
    

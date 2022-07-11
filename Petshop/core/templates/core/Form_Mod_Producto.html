@@ -18,16 +18,16 @@
 
 <div class="container">
 
-    <h2> Crear Registro </h2>
+    <h2> Modificar Registro </h2>
 
     <br>
 
     <div class="row">
         <form method="post" action="" id="formulario">
-
-            <div class="form-group">
+            {% csrf_token %}
+            <table class="form-group">
             {{ form.as_table }}    
-            </div>
+            </table>
 
             <input type="submit" class="btn btn-danger" id="Modificar" value="Modificar">
             <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">

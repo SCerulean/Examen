@@ -16,33 +16,36 @@
 
 <body>
 
-    <div class="row">
-        <table class="table">
-            <thead>
+    <div class="container">
+        <h1>Listado de Productos</h1>
+        <div class="row">
+            <table class="table">
+              <thead>
                 <tr>
-                <th scope="col">IDProducto</th>
-                <th scope="col">NombreProducto</th>
-                <th scope="col">MarcaProducto</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Opciones</th>
+                  <th scope="col">SKU</th>
+                  <th scope="col">nombre</th>
+                  <th scope="col">precio</th>
+                  <th scope="col">stock</th>
+                  <th scope="col">Opciones</th>
                 </tr>
-            </thead>
-            <tbody>
-                {% for ve in vehiculos %}
-                <tr>
-                    <td>{{ve.IDProducto}}</td>
-                    <td>{{ve.NombreProducto}}</td>
-                    <td>{{ve.MarcaProducto}}</td>
-                    <td>{{ve.Precio}}</td>
-                    <td><a href="{% url 'form_mod_producto' ve.IDProducto %}">Modificar</a></td>
-                    <td><a href="{% url 'form_mod_producto' ve.IDProducto %}">Eliminar</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <a href="{% 'form_producto' %}">Nuevo Producto</a>
-        <br><br>
-    </div>
+              </thead>
+                <tbody>
+                  {% for ve in producto %}
+                  <tr>
+                    <td>{{ve.SKU}}</td>
+                    <td>{{ve.nombre}}</td>
+                    <td>{{ve.precio}}</td>
+                    <td>{{ve.stock}}</td>
 
+
+                    <td><a href="{% url 'modificar_producto' ve.SKU %}">Modificar</a></td>
+                    <td><a href="{%  url 'delete_Producto' ve.SKU %}">Eliminar</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'agregar_Producto' %}">Nuevo registro</a>
+        </div>
+    </div>
 </body>
 </html>
