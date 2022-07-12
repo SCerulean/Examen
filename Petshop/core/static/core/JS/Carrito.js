@@ -39,9 +39,11 @@ const Cartitas = data => {
 
     data.forEach(producto => {
 
-        //console.log(producto)
-        templateCard.querySelector('h5').textContent = producto.title
-        templateCard.querySelector('.btn-dark').dataset.id = producto.id 
+        console.log(producto)
+        templateCard.querySelector('h5').textContent = producto.nombre
+        templateCard.querySelectorAll('p')[0].textContent = producto.precio
+        templateCard.querySelectorAll('p')[1].textContent = producto.stock
+        templateCard.querySelector('.btn-dark').dataset.id = producto.SKU 
 
         const clone = templateCard.cloneNode (true)
         fragment.appendChild(clone)
@@ -64,8 +66,9 @@ const setcarrito = objeto => {
     //console.log(objeto)
     const producto = {
         SKU : objeto.querySelector('.btn-dark').dataset.id,
-        title : objeto.querySelector('h5').textContent,
-        precio : objeto.querySelector('p').textContent,
+        nombre : objeto.querySelector('h5').textContent,
+        precio : objeto.querySelectorAll('p')[0].textContent,
+        stock : objeto.querySelectorAll('p')[1].textContent,
         cantidad: 1
 
     }
@@ -83,8 +86,8 @@ const pintarCarrito = () => {
     //console.log(carrito)
     items.innerHTML= ''
     Object.values(carrito).forEach(producto => {
-        templateCarrito.querySelector('th').textContent = producto.id
-        templateCarrito.querySelectorAll('td')[0].textContent = producto.title
+        templateCarrito.querySelector('th').textContent = producto.SKU
+        templateCarrito.querySelectorAll('td')[0].textContent = producto.Nombre
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
         templateCarrito.querySelector('.btn-info').dataset.id = producto.id
         templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
@@ -104,13 +107,13 @@ const pintarCarrito = () => {
 const pintarFooter = () => {
     footer.innerHTML = ''
     if(Object.keys(carrito),length === 0){
-        footer.innerHTML = '<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>'
+        footer.innerHTML = '<th scope="row" colspan="5"> Carrito vacío - comience a comprar!</th>'
 
         return
     }
 
     const nCantidad = Object.values(carrito).reduce((acc,{cantidad}) => acc + cantidad,0)
-    const nPrecio = Object.values(carrito).reduce((acc,{cantidad,precio}) => acc +precio + cantidad,0)
+    const nPrecio = Object.values(carrito).reduce((acc,{cantidad,precio}) => acc + precio + cantidad,0)
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
