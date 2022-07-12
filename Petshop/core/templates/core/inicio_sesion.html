@@ -10,7 +10,7 @@
     <title>Inicio sesion</title>
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'core/css/inicio_sesion.css'%}">
+    <link rel="stylesheet" href="{% static 'core/css/registro.css'%}">
   </head>
   <body>
  
@@ -45,10 +45,10 @@
 
       <form method="post" action="#"  id="formulario">
         <div class="container-fluid field">
-    
-    
+
+
           <div class="container">
-            <h1>Inicio de sesion</h1>
+            <h1>Registro de usuarios</h1>
             <form action="" method="post" id="formulario">
                 {% csrf_token %}
               <table id="formuRegistro">
@@ -61,12 +61,14 @@
             </form>
             <div class="alert alert-success" role="alert">{{mensaje}}</div>
           </div>
-          
-    
-          
         </div> 
-        </form>
-    <label id="linkRegistro">  <a href="{% url 'Registrar_cuenta2' %}"> ¿No tienes cuenta? Registrate!</a></label>
+            </form>
+            <label id="linkRegistro">  <a href="{% url 'Registrar_cuenta2' %}"> ¿No tienes cuenta? Registrate!</a></label>
+
+          </div>
+           
+        </div> 
+    
    
 </div>
 

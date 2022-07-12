@@ -2,17 +2,20 @@
     margin-top: 3%;
 }
 footer{
-    margin-top: 3%;
+    margin-top: 5%;
 }
 .form-group{
-    text-align: start;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 #formuRegistro{
-    text-align: start;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+#enviar{
+    margin-top: 5%;
 }
