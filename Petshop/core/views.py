@@ -1,9 +1,12 @@
 from ast import Return
+from email import message
 from urllib import request
 from django.shortcuts import render,redirect
-
-from .models import Producto
-from .forms import registro,ProductoForm
+from .forms  import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth.views import LoginView, LogoutView
+from .models import Cuenta_cliente, Producto
+from .forms import ProductoForm
 
 
 
@@ -29,20 +32,28 @@ def ListadoProductos (request):
 
 
 
+def catalogo_perfil(request):
+    return render(request,'core/inicio_Catalogo_perfil.html')
 
-def inicio_sesion(request):
-    
-    return render(request,'core/inicio_sesion.html')
 
 def Registrar_cuenta(request):
-    datos = {'form': registro()}
-    if request.method == 'POST':
-        formulario = registro(request.POST)
-        if formulario.is_valid:
-            formulario.save()
-            datos['mensaje'] = "Datos guardados correctamente"
+    if request.method == 'POST':    
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            messages.success(request,f'usuario {username} creado')
+    else :
+        form = UserCreationForm()
 
-    return render(request,'core/Registrarce.html',datos)
+    context = {'form' : form}
+
+    return render(request,'core/Registrarce.html',context)
+
+
+def Registrar_cuenta2(request):
+    return render(request,'core/Registrarce.html')
+
 
 
 #################################################################################
@@ -75,14 +86,11 @@ def modificar_producto(request,id):
 
 #################################################################################
 
-#Traer datos
-def TraerDatos(request):
-    Producto = Producto.objects.all()
-
-    datos = {
-        'Productos' : Producto
-    }
-
-    return render(request, 'inicio_Catalogo.html',datos)
 
 #################################################################################
+
+def button_login(request):
+    return render(request,"core/inicio_sesion.html")
+
+def button_logout(request):
+    return redirect(to="home")
