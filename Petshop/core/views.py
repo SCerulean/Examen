@@ -16,9 +16,6 @@ from .forms import ProductoForm
 def home (request):
     return render(request,'core/inicio_Catalogo.html')
 
-
-
-
 def delete_Producto(request, id):
     producto = Producto.objects.get(SKU=id)
     producto.delete()
@@ -29,7 +26,6 @@ def ListadoProductos (request):
     producto  = Producto.objects.all()
     datos = {'producto': producto}
     return render(request,'core/ListadoProductos.html',datos)
-
 
 
 def catalogo_perfil(request):

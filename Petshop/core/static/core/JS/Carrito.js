@@ -25,7 +25,7 @@ items.addEventListener('click', e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const res = await fetch('http://127.0.0.1:8000/api/lista_Productos')
         const data = await res.json()
         //console.log(data)
         Cartitas(data)
@@ -41,8 +41,7 @@ const Cartitas = data => {
 
         //console.log(producto)
         templateCard.querySelector('h5').textContent = producto.title
-        templateCard.querySelector('.btn-dark').dataset.di = producto.id 
-
+        templateCard.querySelector('.btn-dark').dataset.id = producto.id 
 
         const clone = templateCard.cloneNode (true)
         fragment.appendChild(clone)
@@ -64,10 +63,11 @@ const MostrarProducto = e => {
 const setcarrito = objeto => {
     //console.log(objeto)
     const producto = {
-        id : objeto.querySelector('.btn-dark').dataset.id,
+        SKU : objeto.querySelector('.btn-dark').dataset.id,
         title : objeto.querySelector('h5').textContent,
         precio : objeto.querySelector('p').textContent,
         cantidad: 1
+
     }
 
     if (carrito.hasOwnProperty(producto.id)) {

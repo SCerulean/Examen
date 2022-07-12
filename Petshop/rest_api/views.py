@@ -15,7 +15,6 @@ from rest_framework.permissions import  IsAuthenticated
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-@permission_classes((IsAuthenticated,))
 def lista_Producto(request):
         
     if request.method == 'GET':
@@ -35,7 +34,6 @@ def lista_Producto(request):
 # Create your views here.
 @csrf_exempt
 @api_view(['GET', 'PUT','DELETE'])
-@permission_classes((IsAuthenticated,))
 def detalle_producto(request, id):
     
     try:
