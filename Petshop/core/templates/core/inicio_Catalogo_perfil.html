@@ -51,7 +51,7 @@
             <div class="d-flex">    
 
               <button>
-                <h6><a class="nav-link active text-black bg-white"  href="{% url 'button_logout' %}"> Perfil </a></h6>
+                <h6><a class="nav-link active text-black bg-white"  href="{% url 'button_logout' %}"> Logout </a></h6>
               </button>
 
             </div> <!-- FIN INICIAR SESION -->
@@ -105,8 +105,8 @@
     <template id="template-carrito">
       <tr>
         <th scope="row">id</th>
-        <td>Café</td>
-        <td>1</td>
+        <td> Nombre </td>
+        <td> cantidad </td>
         <td>
           <button class="btn btn-info btn-sm">+</button>
           <button class="btn btn-danger btn-sm">-</button>
@@ -114,6 +114,8 @@
         <td>$ <span>500</span></td>
       </tr>
     </template>
+
+
 
     <!-- inicio carta -->
 
@@ -123,8 +125,9 @@
       <div class="col-12 mb-2 col-md-3">
         <div class="card">
           <div class="card-body">
-            <h5> Titulo </h5>
-            <p> precio </p>
+            <h5> Nombre </h5>
+            <p> Precio </p>
+            <p> Stock </p>
             <button class="btn btn-dark"> Ver Producto </button>
           </div>
         </div>
@@ -132,6 +135,9 @@
     </template>
 
     </div>  <!-- fin carta -->
+
+    <hr>
+
 
   </div> 
 
