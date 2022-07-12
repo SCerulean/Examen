@@ -16,9 +16,6 @@
 
   <body>
 
-    <!-- Container general -->
-
-    <div class="container-fluid w-100 p-0 h-100 text-center">
 
     <!-- Navbar -->
 
@@ -66,7 +63,7 @@
       </nav> <!-- FIN NAVBAR -->
 
 
-  <div class="container-fluid" id="cards">
+    <div class="container-fluid" id="cards">
 
     <hr>
 
@@ -74,28 +71,28 @@
 
     <hr>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Acción</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody id="items"></tbody>
-        <tfoot>
-          <tr id="footer">
-            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-          </tr>
-        </tfoot>
-      </table>
+    <div class="container">
 
-      <div class="row" id="cards"></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Acción</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody id="items"></tbody>
+      <tfoot>
+        <tr id="footer">
+          <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+        </tr>
+      </tfoot>
+    </table>
+
+  <div class="row" id="cards"></div>
   
-
-    <!-- ------------------------------------------------------------ -->
   <template id="template-footer">
       <th scope="row" colspan="2">Total productos</th>
       <td>10</td>
@@ -123,6 +120,7 @@
       <td>$ <span>500</span></td>
     </tr>
   </template>
+</div>
 
     <!-- ------------------------------------------------------------ -->
 
@@ -132,7 +130,7 @@
     <div class="row" id="items">
 
     <template id="template-card">
-      <div class="col-4 mb-2 col-md-4">
+      <div class="col-3 mb-4 col-md-4">
         <div class="card">
           <div class="card-body">
             <h5> Titulo </h5>
@@ -144,103 +142,9 @@
     </template>
 
     </div>  <!-- fin carta -->
-    
 
+  </div> <!-- Fin container general -->
 
-    <!-- INICIO FOOTER -->
-    
-    <footer class="bg-dark text-center text-white"> 
-
-    <!-- CONTAINER GRID -->
-
-    <div class="container p-4"> 
-
-    <!-- SECCION NUESTROS CONTACTOS -->
-
-    <section class="mb-4">  
-      <h3> Nuestros Contactos </h3>
-    </section>
-
-    <!-- SECCION DE COLUMNAS -->
-
-    <section class="">
-
-      <!-- ROW COLUMNAS -->
-
-      <div class="row"> 
-
-        <!-- COLUMNA: CONTACTOS TELEFÓNICOS -->
-
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0"> 
-
-          <h5 class="text-uppercase"> CONTACTO TELEFÓNICO </h5>
-
-          <ul class="list-unstyled mb-0">
-
-            <li>
-              <h6> +569 555 555 55 </h6>
-            </li>
-            <li>
-              <h6> +569 999 999 99 </h6>
-            </li>
-
-          </ul>
-
-        </div>  <!-- FIN COLUMNA: CONTACTOS TELEFÓNICOS -->
-
-        <!-- COLUMNA: CONTACTO REDES SOCIALES -->
-
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">  
-
-          <h5 class="text-uppercase"> NUESTRAS REDES </h5>
-
-          <ul class="list-unstyled mb-0">
-
-            <li>
-              <a href="#!" class="text-white"> INSTAGRAM : @PETSHOP-VALPARAISO </a>
-            </li>
-            <li>
-              <a href="#!" class="text-white"> FACEBOOK : @PETSHOP-VALPARAISO </a>
-            </li>
-  
-          </ul>
-
-        </div>  <!-- FIN COLUMNA: CONTACTO REDES SOCIALES -->
-
-        <!-- SPONSORS OFICIALES -->
-
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">  
-          <h5 class="text-uppercase"> PROVEEDORES </h5>
-
-          <ul class="list-unstyled mb-0">
-
-            <li>
-              <h6> IDENTIFICADORES - ANIMALES SEGUROS </h6>
-            </li>
-            <li>
-              <h6> TRAJES Y ARNESES - PETLOVERS </h6>
-            </li>
-    
-          </ul>
-
-        </div> <!-- FIN SPONSORS OFICIALES -->
-
-      </div>  <!-- FIN ROW COLUMNAS -->
-
-    </section>  <!-- FIN SECCION DE COLUMNAS -->
-
-  </div>  <!-- FIN CONTAINER GRID -->
-
-  <!-- Copyright -->
-
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-  </div>
-
-  <!-- Copyright -->
-
-</footer> <!-- Final Footer -->
-
-</div> <!-- Fin container general -->
 
 
 
