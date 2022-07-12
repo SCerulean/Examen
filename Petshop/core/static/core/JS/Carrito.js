@@ -25,7 +25,7 @@ items.addEventListener('click', e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+        const res = await fetch('http://127.0.0.1:8000/api/lista_Productos')
         const data = await res.json()
         //console.log(data)
         Cartitas(data)
